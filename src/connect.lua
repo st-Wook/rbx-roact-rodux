@@ -1,5 +1,5 @@
 local nodeModules = script.Parent.Parent.Parent
-local Roact = require(nodeModules.roact.src)
+local Roact = require(nodeModules.React.React)
 local shallowEqual = require(script.Parent.shallowEqual)
 local join = require(script.Parent.join)
 local StoreContext = require(script.Parent.StoreContext)
