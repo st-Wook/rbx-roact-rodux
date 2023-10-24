@@ -88,23 +88,7 @@ local function connect(mapStateToPropsOrThunk, mapDispatchToProps)
 			if prevState.stateUpdater ~= nil then
 				return prevState.stateUpdater(nextProps.innerProps, prevState)
 			end
-		end
-
-		function Connection:createStoreConnection()
-			self.storeChangedConnection = self.store.changed:connect(function(storeState)
-				self:setState(function(prevState, props)
-					local mappedStoreState = prevState.mapStateToProps(storeState, props.innerProps)
-
-					-- We run this check here so that we only check shallow
-					-- equality with the result of mapStateToProps, and not the
-					-- other props that could be passed through the connector.
-					if shallowEqual(mappedStoreState, prevState.mappedStoreState) then
-						return nil
-					end
-
-					return prevState.stateUpdater(props, prevState, mappedStoreState)
-				end)
-			end)
+			return nil
 		end
 
 		function Connection:init(props)
@@ -192,12 +176,37 @@ local function connect(mapStateToPropsOrThunk, mapDispatchToProps)
 			for key, value in pairs(extraState) do
 				self.state[key] = value
 			end
+		end
 
-			self:createStoreConnection()
+		function Connection:didMount()
+			local updateStateWithStore = function(storeState)
+				self:setState(function(prevState, props)
+					local mappedStoreState = prevState.mapStateToProps(storeState, props.innerProps)
+
+					-- We run this check here so that we only check shallow
+					-- equality with the result of mapStateToProps, and not the
+					-- other props that could be passed through the connector.
+					if shallowEqual(mappedStoreState, prevState.mappedStoreState) then
+						return nil
+					end
+
+					return prevState.stateUpdater(props.innerProps, prevState, mappedStoreState)
+				end)
+			end
+
+			-- Update store state on mount to catch missed state updates between
+			-- init and mount. State could be stale otherwise.
+			updateStateWithStore(self.store:getState())
+
+			-- Connect state updater to the Rodux store
+			self.storeChangedConnection = self.store.changed:connect(updateStateWithStore)
 		end
 
 		function Connection:willUnmount()
-			self.storeChangedConnection:disconnect()
+			if self.storeChangedConnection then
+				self.storeChangedConnection:disconnect()
+				self.storeChangedConnection = nil
+			end
 		end
 
 		function Connection:render()
