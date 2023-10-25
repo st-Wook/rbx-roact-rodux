@@ -1,5 +1,5 @@
 local nodeModules = script.Parent.Parent.Parent
-local Roact = require(nodeModules.RoactCompat)
+local Roact = require(nodeModules.roact.src)
 
 local StoreContext = require(script.Parent.StoreContext)
 
@@ -20,9 +20,7 @@ end
 function StoreProvider:render()
 	return Roact.createElement(StoreContext.Provider, {
 		value = self.store,
-	}, Roact.oneChild(
-		self.props[Roact.Children]
-	))
+	}, Roact.oneChild(self.props[Roact.Children]))
 end
 
 return StoreProvider

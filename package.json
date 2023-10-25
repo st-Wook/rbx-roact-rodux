@@ -25,11 +25,11 @@
 		"url": "https://github.com/roblox-ts/rbx-roact-rodux"
 	},
 	"devDependencies": {
-		"@rbxts/roact": "npm:@rbxts/react-ts@^1.0.1",
+		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
 		"@rbxts/rodux": "^3.0.0-ts.3"
 	},
 	"peerDependencies": {
-		"@rbxts/roact": "npm:@rbxts/react-ts@^1.0.1",
+		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
 		"@rbxts/rodux": "^3.0.0-ts.3"
 	}
 }
