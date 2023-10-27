@@ -26,7 +26,8 @@
 	},
 	"devDependencies": {
 		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
-		"@rbxts/rodux": "github:st-Wook/rbx-rodux#master"
+		"@rbxts/rodux": "github:st-Wook/rbx-rodux#master",
+		"prettier": "^3.0.3"
 	},
 	"peerDependencies": {
 		"@rbxts/roact": "github:st-Wook/rbx-roact#master",

@@ -6,8 +6,8 @@ declare interface StoreProviderProps {
 }
 
 declare class StoreProvider extends Roact.Component<StoreProviderProps> {
-    constructor(props: StoreProviderProps);
-    public render(): Roact.Element;
+	constructor(props: StoreProviderProps);
+	public render(): Roact.Element;
 }
 
 export = StoreProvider;
