@@ -177,7 +177,7 @@ local function connect(mapStateToPropsOrThunk, mapDispatchToProps)
 			end
 		end
 
-		function Connection:didMount()
+		function Connection:componentDidMount()
 			local updateStateWithStore = function(storeState)
 				self:setState(function(prevState, props)
 					local mappedStoreState = prevState.mapStateToProps(storeState, props.innerProps)
@@ -201,7 +201,7 @@ local function connect(mapStateToPropsOrThunk, mapDispatchToProps)
 			self.storeChangedConnection = self.store.changed:connect(updateStateWithStore)
 		end
 
-		function Connection:willUnmount()
+		function Connection:componentWillUnmount()
 			if self.storeChangedConnection then
 				self.storeChangedConnection:disconnect()
 				self.storeChangedConnection = nil
