@@ -25,12 +25,13 @@
 		"url": "https://github.com/roblox-ts/rbx-roact-rodux"
 	},
 	"devDependencies": {
-		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
+		"@rbxts/roact": "github:st-Wook/rbxts-react#main",
 		"@rbxts/rodux": "github:st-Wook/rbx-rodux#master",
 		"prettier": "^3.0.3"
 	},
-	"peerDependencies": {
-		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
+	"dependencies": {
+		"@rbxts/luau-polyfill-internal": "^1.2.3-ts.0",
+		"@rbxts/roact": "github:st-Wook/rbxts-react#main",
 		"@rbxts/rodux": "github:st-Wook/rbx-rodux#master"
 	}
 }
