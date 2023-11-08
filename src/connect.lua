@@ -1,4 +1,4 @@
-local Roact = require(script.Parent.Parent.Parent.React)
+local Roact = require(script.Parent.Parent.Parent.roact.src)
 
 local shallowEqual = require(script.Parent.shallowEqual)
 local join = require(script.Parent.join)
