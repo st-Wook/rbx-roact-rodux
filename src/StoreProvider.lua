@@ -19,7 +19,7 @@ end
 function StoreProvider:render()
 	return Roact.createElement(StoreContext.Provider, {
 		value = self.store,
-	}, RoactCompat.oneChild(self.props.children))
+	}, Roact.oneChild(self.props.children))
 end
 
 return StoreProvider
