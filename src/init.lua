@@ -1,5 +1,5 @@
-local StoreProvider = require(script.StoreProvider)
 local StoreContext = require(script.StoreContext)
+local StoreProvider = require(script.StoreProvider)
 local connect = require(script.connect)
 
 return {

@@ -1,8 +1,8 @@
 local Roact = require(script.Parent.Parent.Parent.roact.src)
 
-local shallowEqual = require(script.Parent.shallowEqual)
-local join = require(script.Parent.join)
 local StoreContext = require(script.Parent.StoreContext)
+local join = require(script.Parent.join)
+local shallowEqual = require(script.Parent.shallowEqual)
 
 --[[
 	Formats a multi-line message with printf-style placeholders.
