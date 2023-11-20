@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
 		"@rbxts/rodux": "github:st-Wook/rbx-rodux#master",
-		"prettier": "^3.0.3"
+		"prettier": "^3.1.0"
 	},
 	"dependencies": {
 		"@rbxts/luau-polyfill-internal": "^1.2.3-ts.0",
