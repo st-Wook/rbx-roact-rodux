@@ -8,7 +8,7 @@ local shallowEqual = require(script.Parent.shallowEqual)
 	Formats a multi-line message with printf-style placeholders.
 ]]
 local function formatMessage(lines, parameters)
-	return table.concat(lines, "\n"):format(unpack(parameters or {}))
+	return string.format(table.concat(lines, "\n"), table.unpack(parameters or {}))
 end
 
 local function noop()
@@ -79,7 +79,7 @@ local function connect(mapStateToPropsOrThunk, mapDispatchToProps)
 			error(message, 2)
 		end
 
-		local componentName = ("RoduxConnection(%s)"):format(tostring(innerComponent))
+		local componentName = string.format("RoduxConnection(%s)", tostring(innerComponent))
 
 		local Connection = Roact.Component:extend(componentName)
 
