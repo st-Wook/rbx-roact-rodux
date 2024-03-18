@@ -25,7 +25,7 @@
 		"url": "https://github.com/roblox-ts/rbx-roact-rodux"
 	},
 	"devDependencies": {
-		"prettier": "^3.1.0"
+		"prettier": "^3.2.5"
 	},
 	"dependencies": {
 		"@rbxts/luau-polyfill-internal": "^1.2.3-ts.0",

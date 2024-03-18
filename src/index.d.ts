@@ -51,11 +51,11 @@ declare namespace RoactRodux {
 				C,
 				Omit<GetProps<C> & GetDefaultProps<C>, keyof Shared<TInjectedProps, GetProps<C>>> &
 					Partial<GetDefaultProps<C>>
-		  >
+			>
 		: ConnectedComponentClass<
 				C,
 				Omit<GetProps<C>, keyof Shared<TInjectedProps, GetProps<C>>> // & TNeedsProps
-		  >;
+			>;
 
 	export type EnhancerWithProps<TInjectedProps, TNeedsProps> = <
 		C extends ComponentType<Matching<TInjectedProps, GetProps<C>>>,
@@ -108,7 +108,7 @@ declare namespace RoactRodux {
 	}
 		? {
 				[C in keyof TDispatchProps]: HandleThunkActionCreator<TDispatchProps[C]>;
-		  }
+			}
 		: TDispatchProps;
 }
 
