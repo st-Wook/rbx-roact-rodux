@@ -29,7 +29,8 @@
 	},
 	"dependencies": {
 		"@rbxts/luau-polyfill-internal": "^1.2.3-ts.0",
-		"@rbxts/roact": "github:st-Wook/rbx-roact#master",
+		"@rbxts/react": "^0.3.6",
+		"@rbxts/react-roblox": "^0.3.6",
 		"@rbxts/rodux": "github:st-Wook/rbx-rodux#master"
 	}
 }
