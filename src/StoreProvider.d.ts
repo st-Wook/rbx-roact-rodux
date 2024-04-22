@@ -1,13 +1,13 @@
-import React from "@rbxts/react";
+import Roact from "@rbxts/roact";
 import Rodux from "@rbxts/rodux";
 
 declare interface StoreProviderProps {
 	store: Rodux.Store<unknown>;
 }
 
-declare class StoreProvider extends React.Component<StoreProviderProps> {
+declare class StoreProvider extends Roact.Component<StoreProviderProps> {
 	constructor(props: StoreProviderProps);
-	public render(): React.Element;
+	public render(): Roact.Element;
 }
 
 export = StoreProvider;

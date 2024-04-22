@@ -1,17 +1,17 @@
+import Roact from "@rbxts/roact";
 import Rodux from "@rbxts/rodux";
 import connect from "./connect";
 import StoreProvider from "./StoreProvider";
-import React from "@rbxts/react";
 
 declare namespace RoactRodux {
 	export { connect, StoreProvider };
 }
 
 declare namespace RoactRodux {
-	interface StatefulComponent<P> extends React.ClassicComponentClass<P> {}
+	interface StatefulComponent<P> extends Roact.RenderablePropsClass<P> {}
 
 	interface FunctionalComponent<P> {
-		(props: P): React.ReactNode;
+		(props: P): Roact.Element | undefined;
 	}
 
 	type ComponentType<P = {}> = StatefulComponent<P> | FunctionalComponent<P>;
@@ -32,7 +32,7 @@ declare namespace RoactRodux {
 	};
 
 	type ConnectedComponentClass<C extends ComponentType<any>, P> = C & {
-		new (props: P): React.Component<P>;
+		new (props: P): Roact.Component<P>;
 	};
 
 	// Infers prop type from component C

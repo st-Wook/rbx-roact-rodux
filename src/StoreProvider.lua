@@ -1,4 +1,4 @@
-local Roact = require(script.Parent.Parent.Parent.ReactLua.RoactCompat)
+local Roact = require(script.Parent.Parent.Parent.roact.src)
 
 local StoreContext = require(script.Parent.StoreContext)
 
